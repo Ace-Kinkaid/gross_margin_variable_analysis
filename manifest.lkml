@@ -1,6 +1,6 @@
-project_name: "thelook_event"
+project_name: "advance_auto_parts_demo"
 
 localization_settings: {
-  default_locale: ja_JP
+  default_locale: en
   localization_level: permissive
 }

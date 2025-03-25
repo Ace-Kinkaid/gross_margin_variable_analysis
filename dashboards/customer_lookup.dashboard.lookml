@@ -1,5 +1,5 @@
-- dashboard: customer_lookup
-  title: Customer Lookup
+- dashboard: customer_lookup_aap
+  title: Customer Lookup AAP
   layout: newspaper
   description: ''
   preferred_slug: MDDG8M9Lvb1S2zq5UuhUND
@@ -13,7 +13,7 @@
   elements:
   - title: User Info
     name: User Info
-    model: thelook
+    model: thelook_aap
     explore: order_items
     type: looker_single_record
     fields: [users.id, users.email, users.name, users.traffic_source, users.created_month,
@@ -39,7 +39,7 @@
     height: 6
   - title: Lifetime Orders
     name: Lifetime Orders
-    model: thelook
+    model: thelook_aap
     explore: order_items
     type: single_value
     fields: [order_items.order_count]
@@ -60,7 +60,7 @@
     height: 3
   - title: Total Items Returned
     name: Total Items Returned
-    model: thelook
+    model: thelook_aap
     explore: order_items
     type: single_value
     fields: [order_items.count]
@@ -81,7 +81,7 @@
     height: 3
   - title: Items Order History
     name: Items Order History
-    model: thelook
+    model: thelook_aap
     explore: order_items
     type: looker_grid
     fields: [order_items.id, products.item_name, order_items.status, order_items.created_date,
@@ -101,7 +101,7 @@
     height: 5
   - title: Favorite Categories
     name: Favorite Categories
-    model: thelook
+    model: thelook_aap
     explore: order_items
     type: looker_pie
     fields: [products.category, order_items.count]
@@ -132,7 +132,7 @@
     height: 5
   - title: User Location
     name: User Location
-    model: thelook
+    model: thelook_aap
     explore: order_items
     type: looker_geo_coordinates
     fields: [users.count, users.location]
@@ -177,7 +177,7 @@
     height: 9
   - title: Generate Promo Email
     name: Generate Promo Email
-    model: thelook
+    model: thelook_aap
     explore: order_items
     type: single_value
     fields: [users.promo_email]
@@ -219,7 +219,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: thelook
+    model: thelook_aap
     explore: order_items
     listens_to_filters: []
     field: users.email
