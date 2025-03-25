@@ -1,5 +1,5 @@
 - dashboard: business_pulse_aap
-  title: Business Pulse AAP
+  title: Business Pulse AAP LookML
   layout: newspaper
   preferred_viewer: dashboards
   description: ''
