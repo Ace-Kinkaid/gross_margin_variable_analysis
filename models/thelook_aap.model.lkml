@@ -1,5 +1,5 @@
 connection: "sample_bigquery_connection"
-label: " eCommerce"
+label: "Supplier Portal"
 include: "/queries/queries*.view" # includes all queries refinements
 include: "/views/**/*.view" # include all the views
 include: "/gen_ai/**/*.view" # include all the views
