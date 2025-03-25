@@ -11,8 +11,56 @@ view: products {
   }
 
   dimension: category {
-    label: "Category"
-    sql: TRIM(${TABLE}.category) ;;
+    label: "Departments"
+    #sql: TRIM(${TABLE}.category) ;;
+    case: {
+      when: {
+        sql: TRIM(${TABLE}.category) = "Jeans" ;;
+        label: "Batteries and Chargers"
+      }
+      when: {
+        sql: TRIM(${TABLE}.category) = "Tops & Tees" ;;
+        label: "Tools"
+      }
+      when: {
+        sql: TRIM(${TABLE}.category) = "Active" ;;
+        label: "Wheels and Tires"
+      }
+      when: {
+        sql: TRIM(${TABLE}.category) = "Shorts" ;;
+        label: "Lighting"
+      }
+      when: {
+        sql: TRIM(${TABLE}.category) = "Pants" ;;
+        label: "Belts and Hoses"
+      }
+      when: {
+        sql: TRIM(${TABLE}.category) = "Outerwear & Coats" ;;
+        label: "Oil and Lubricants"
+      }
+      when: {
+        sql: TRIM(${TABLE}.category) = "Fashion Hoodies & Sweatshirts" ;;
+        label: "Motorcycle and ATV"
+      }
+      when: {
+        sql: TRIM(${TABLE}.category) = "Sweaters" ;;
+        label: "Electrical"
+      }
+      when: {
+        sql: TRIM(${TABLE}.category) = "Dresses" ;;
+        label: "Braking"
+      }
+      when: {
+        sql: TRIM(${TABLE}.category) = "Swim" ;;
+        label: "Audio and Video"
+      }
+      when: {
+        sql: TRIM(${TABLE}.category) = "Sleep & Lounge" ;;
+        label: "Fluids and Chemicals"
+      }
+      # Possibly more when statements
+      else: "Wipers and Related"
+    }
     drill_fields: [department, brand, item_name]
   }
 
@@ -168,7 +216,7 @@ view: products {
   }
 
   dimension: department {
-    label: "Department"
+    label: "Demographic"
     sql: TRIM(${TABLE}.department) ;;
   }
 
