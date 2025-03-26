@@ -200,7 +200,7 @@ view: products {
         sql: TRIM(${TABLE}.brand) = "Lee" ;;
         label: "WD-40"
       }
-      else: "Carquest"
+      else: "3M"
     }
   }
 
