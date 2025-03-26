@@ -162,7 +162,7 @@ view: products {
     case: {
       when: {
         sql: TRIM(${TABLE}.brand) = "Levi's" ;;
-        label: "Carquest"
+        label: "3M"
       }
       when: {
         sql: TRIM(${TABLE}.brand) = "Carhartt" ;;
@@ -200,7 +200,7 @@ view: products {
         sql: TRIM(${TABLE}.brand) = "Lee" ;;
         label: "WD-40"
       }
-      else: "3M"
+      else: "Carquest"
     }
   }
 
