@@ -72,7 +72,7 @@ view: products {
 
   dimension: brand {
     label: "Brand"
-    sql: TRIM(${TABLE}.brand) ;;
+    #sql: TRIM(${TABLE}.brand) ;;
     drill_fields: [item_name]
     link: {
       label: "Website"
@@ -158,6 +158,49 @@ view: products {
         required: yes
         default: "{{ value }}"
       }
+    }
+    case: {
+      when: {
+        sql: TRIM(${TABLE}.brand) = "Levi's" ;;
+        label: "Carquest"
+      }
+      when: {
+        sql: TRIM(${TABLE}.brand) = "Carhartt" ;;
+        label: "DieHard"
+      }
+      when: {
+        sql: TRIM(${TABLE}.brand) = "Allegra K" ;;
+        label: "Autocraft"
+      }
+      when: {
+        sql: TRIM(${TABLE}.brand) = "Ray-Ban" ;;
+        label: "FRAM"
+      }
+      when: {
+        sql: TRIM(${TABLE}.brand) = "Dockers" ;;
+        label: "Mobil 1"
+      }
+      when: {
+        sql: TRIM(${TABLE}.brand) = "Columbia" ;;
+        label: "ACDelco"
+      }
+      when: {
+        sql: TRIM(${TABLE}.brand) = "Champion" ;;
+        label: "MagnaFlow"
+      }
+      when: {
+        sql: TRIM(${TABLE}.brand) = "Hanes" ;;
+        label: "WeatherTech"
+      }
+      when: {
+        sql: TRIM(${TABLE}.brand) = "TrendsBlue" ;;
+        label: "iHome"
+      }
+      when: {
+        sql: TRIM(${TABLE}.brand) = "Lee" ;;
+        label: "WD-40"
+      }
+      else: "Carquest"
     }
   }
 

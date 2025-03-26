@@ -113,6 +113,7 @@ view: user_order_facts {
     tiers: [0, 25, 50, 100, 200, 500, 1000]
     sql: ${lifetime_revenue} ;;
     style: integer
+    value_format_name: usd_0
   }
 
   measure: average_lifetime_revenue {
