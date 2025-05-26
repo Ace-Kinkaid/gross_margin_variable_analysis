@@ -93,7 +93,8 @@ view: products {
     action: {
       label: "Email Brand Promotion to Cohort"
       url: "https://desolate-refuge-53336.herokuapp.com/posts"
-      icon_url: "https://sendgrid.com/favicon.ico"
+      #icon_url: "https://sendgrid.com/favicon.ico"
+      icon_url: "https://workspace.google.com/lp/static/images/logo-gmail.png?fingerprint=c2eaf4aae389c3f885e97081bb197b97"
       param: {
         name: "some_auth_code"
         value: "abc123456"
