@@ -1,4 +1,4 @@
-include: "/models/**/thelook_aap.model.lkml"
+include: "/models/**/thelook_gm.model.lkml"
 
 view: order_facts {
   view_label: "Order Facts"
