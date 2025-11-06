@@ -20,6 +20,9 @@ datagroup: ecommerce_etl_modified {
 persist_with: ecommerce_etl_modified
 ############ Base Explores #############
 
+explore: gm_variance {
+  label: "Gross Margin Variance Analysis"
+}
 
 explore: order_items {
   label: "(1) Orders, Items and Users"
