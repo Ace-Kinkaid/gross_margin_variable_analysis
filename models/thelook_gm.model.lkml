@@ -22,6 +22,11 @@ persist_with: ecommerce_etl_modified
 
 explore: gm_variance {
   label: "Gross Margin Variance Analysis"
+  join: products {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${gm_variance.product_id} = ${products.id} ;;
+  }
 }
 
 explore: order_items {

@@ -180,15 +180,18 @@ view: gm_variance {
 
 
   dimension: product_id {
+    label: "Product ID"
     type: number
     sql: ${TABLE}.product_id ;;
     description: "ID of the product."
+    value_format_name: id
   }
 
   dimension: product_category {
     type: string
     sql: ${TABLE}.product_category ;;
     description: "Category of the product."
+    drill_fields: [product_details*]
   }
 
   dimension: sale_price {
@@ -268,6 +271,7 @@ view: gm_variance {
     type: sum
     sql: ((${quantity_c1} / NULLIF(${months_c1},0)) - (${quantity_c2} / NULLIF(${months_c2},0))) * ${margin_per_unit_c2} * ${matching_product} ;;
     value_format_name: usd
+    drill_fields: [product_details*]
   }
 
   measure: price_effect {
@@ -275,6 +279,7 @@ view: gm_variance {
     type: sum
     sql: (${price_per_unit_c1} - ${price_per_unit_c2}) * (${quantity_c1} / NULLIF(${months_c1},0)) * ${matching_product} ;;
     value_format_name: usd
+    drill_fields: [product_details*]
   }
 
   measure: product_mix_effect {
@@ -282,6 +287,7 @@ view: gm_variance {
     type: sum
     sql: (${margin_per_unit_c1} - ${margin_per_unit_c2}) * (${quantity_c1} / NULLIF(${months_c1},0)) * ${matching_product} ;;
     value_format_name: usd
+    drill_fields: [product_details*]
   }
 
   measure: non_matching_products {
@@ -289,10 +295,15 @@ view: gm_variance {
     type: sum
     sql: ((${gross_margin_c1} / NULLIF(${months_c1},0)) - (${gross_margin_c2} / NULLIF(${months_c2},0))) * (1 - ${matching_product}) ;;
     value_format_name: usd
+    drill_fields: [product_details*]
   }
 
   measure: count {
     type: count
     drill_fields: [product_id, product_category]
+  }
+
+  set: product_details {
+    fields: [product_category, product_id, products.item_name, total_sales_period_1, total_sales_period_2, total_gross_margin_c1, total_gross_margin_c2, volume_effect, price_effect, product_mix_effect, non_matching_products]
   }
 }

@@ -65,7 +65,7 @@ view: products {
   }
 
   dimension: item_name {
-    label: "Item Name"
+    label: "Product Name"
     sql: TRIM(${TABLE}.name) ;;
     drill_fields: [id]
   }
