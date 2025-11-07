@@ -1,4 +1,5 @@
 view: gm_variance {
+  label: "GM Variance"
   derived_table: {
     sql: WITH
             base_data AS (
